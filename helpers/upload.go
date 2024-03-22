@@ -14,7 +14,7 @@ import (
 	imgBB "github.com/JohnNON/ImgBB"
 )
 
-const (
+var (
 	key = os.Getenv("apiKeyImgBB")
 )
 
