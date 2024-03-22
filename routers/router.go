@@ -11,14 +11,12 @@ import (
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	// cors "github.com/gin-contrib/cors"
 )
 
 func Router() {
 	router := gin.Default()
 	var PORT = os.Getenv("PORT")
 	// Set a lower memory limit for multipart forms (default is 32 MiB)
-	// router.Use(cors.Default())
 	router.MaxMultipartMemory = 8 << 20 // 8 MiB
 	router.POST("/users/register", controllers.Register)
 	router.POST("/users/login", controllers.Login)
