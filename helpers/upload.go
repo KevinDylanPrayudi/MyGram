@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	key = "4c47299a534bcf8945fdf566ac80a9f5"
+	key = os.Getenv("apiKeyImgBB")
 )
 
 func Upload(file *multipart.FileHeader) (string, error) {
