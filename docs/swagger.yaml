@@ -1,0 +1,783 @@
+basePath: /
+definitions:
+  structs.AddComment:
+    properties:
+      message:
+        example: message
+        type: string
+      photo_id:
+        example: 1
+        format: int64
+        type: integer
+    type: object
+  structs.AddCommentResult:
+    properties:
+      created_at:
+        example: date
+        type: string
+      id:
+        example: 1
+        format: int64
+        type: integer
+      message:
+        example: message
+        type: string
+      photo_id:
+        example: 1
+        format: int64
+        type: integer
+      user_id:
+        example: 1
+        format: int64
+        type: integer
+    type: object
+  structs.AddPhotoResult:
+    properties:
+      caption:
+        example: caption
+        type: string
+      created_at:
+        example: date
+        type: string
+      id:
+        example: 1
+        format: int64
+        type: integer
+      photo_url:
+        example: photo url
+        type: string
+      title:
+        example: title
+        type: string
+      user_id:
+        example: 1
+        format: int64
+        type: integer
+    type: object
+  structs.AddSocialMedia:
+    properties:
+      name:
+        example: testing
+        type: string
+      social_media_url:
+        example: testing
+        type: string
+    type: object
+  structs.AddSocialMediaResult:
+    properties:
+      created_at:
+        example: date
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: testing
+        type: string
+      social_media_url:
+        example: testing
+        type: string
+      user_id:
+        example: 1
+        type: integer
+    type: object
+  structs.AddUser:
+    properties:
+      age:
+        example: 9
+        format: int64
+        type: integer
+      email:
+        example: testing@gmail.com
+        type: string
+      password:
+        example: "123456"
+        type: string
+      username:
+        example: testing
+        type: string
+    type: object
+  structs.AddUserResult:
+    properties:
+      age:
+        example: 9
+        format: int64
+        type: integer
+      email:
+        example: testing@gmail.com
+        type: string
+      id:
+        example: 1
+        format: int64
+        type: integer
+      username:
+        example: testing
+        type: string
+    type: object
+  structs.DeleteCommentResult:
+    properties:
+      message:
+        example: Your comment has been successfully deleted
+        type: string
+    type: object
+  structs.DeletePhotoResult:
+    properties:
+      message:
+        example: Your photo has been successfully deleted
+        type: string
+    type: object
+  structs.DeleteSocialMediaResult:
+    properties:
+      message:
+        example: Your social media has been successfully deleted
+        type: string
+    type: object
+  structs.DeleteUserResult:
+    properties:
+      message:
+        example: Your account has been successfully deleted
+        type: string
+    type: object
+  structs.GetCommentResult:
+    properties:
+      created_at:
+        example: date
+        type: string
+      id:
+        example: 1
+        format: int64
+        type: integer
+      message:
+        example: message
+        type: string
+      photo_id:
+        example: 1
+        format: int64
+        type: integer
+      updated_at:
+        example: date
+        type: string
+      user:
+        properties:
+          email:
+            example: testing@gmail.com
+            type: string
+          id:
+            example: 1
+            format: int64
+            type: integer
+          username:
+            example: testing
+            type: string
+        type: object
+      user_id:
+        example: 1
+        format: int64
+        type: integer
+    type: object
+  structs.GetPhotoResult:
+    properties:
+      caption:
+        example: caption
+        type: string
+      created_at:
+        example: date
+        type: string
+      id:
+        example: 1
+        format: int64
+        type: integer
+      photo_url:
+        example: photo_url
+        type: string
+      title:
+        example: title
+        type: string
+      updated_at:
+        example: date
+        type: string
+      user:
+        properties:
+          email:
+            example: testing@gmail.com
+            type: string
+          username:
+            example: testing
+            type: string
+        type: object
+      user_id:
+        example: 1
+        format: int64
+        type: integer
+    type: object
+  structs.GetSocialMediaResult:
+    properties:
+      created_at:
+        example: date
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: testing
+        type: string
+      social_media_url:
+        example: testing
+        type: string
+      updated_at:
+        example: date
+        type: string
+      user:
+        properties:
+          email:
+            example: testing@gmail.com
+            type: string
+          id:
+            example: 1
+            format: int64
+            type: integer
+          username:
+            example: testing
+            type: string
+        type: object
+      user_id:
+        example: 1
+        type: integer
+    type: object
+  structs.LoginUser:
+    properties:
+      email:
+        example: testing@gmail.com
+        type: string
+      password:
+        example: "123456"
+        type: string
+    type: object
+  structs.LoginUserResult:
+    properties:
+      token:
+        example: result of generated token
+        type: string
+    type: object
+  structs.UpdateComment:
+    properties:
+      message:
+        example: update message
+        type: string
+    type: object
+  structs.UpdateCommentResult:
+    properties:
+      id:
+        example: 1
+        format: int64
+        type: integer
+      message:
+        example: update message
+        type: string
+      photo_id:
+        example: 1
+        format: int64
+        type: integer
+      updated_at:
+        example: date
+        type: string
+      user_id:
+        example: 1
+        format: int64
+        type: integer
+    type: object
+  structs.UpdatePhotoResult:
+    properties:
+      caption:
+        example: update caption
+        type: string
+      id:
+        example: 1
+        format: int64
+        type: integer
+      photo_url:
+        example: update photo url
+        type: string
+      title:
+        example: update title
+        type: string
+      updated_at:
+        example: date
+        type: string
+      user_id:
+        example: 1
+        format: int64
+        type: integer
+    type: object
+  structs.UpdateSocialMedia:
+    properties:
+      name:
+        example: update testing
+        type: string
+      social_media_url:
+        example: update testing
+        type: string
+    type: object
+  structs.UpdateSocialMediaResult:
+    properties:
+      id:
+        example: 1
+        type: integer
+      name:
+        example: update testing
+        type: string
+      social_media_url:
+        example: update testing
+        type: string
+      updated_at:
+        example: date
+        type: string
+      user_id:
+        example: 1
+        type: integer
+    type: object
+  structs.UpdateUser:
+    properties:
+      email:
+        example: testing1@gmail.com
+        type: string
+      username:
+        example: testing1
+        type: string
+    type: object
+  structs.UpdateUserResult:
+    properties:
+      age:
+        example: 9
+        format: int64
+        type: integer
+      email:
+        example: testing@gmail.com
+        type: string
+      id:
+        example: 1
+        format: int64
+        type: integer
+      updated_at:
+        example: date
+        type: string
+      username:
+        example: testing
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a API to reach out my final assignment
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: MyGram api
+  version: "1.0"
+paths:
+  /comment:
+    get:
+      consumes:
+      - application/json
+      description: Show List of Comment by json Comment
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/structs.GetCommentResult'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Show List of Comment
+      tags:
+      - comment
+    post:
+      consumes:
+      - application/json
+      description: Create by json comment
+      parameters:
+      - description: Show List of Comment
+        in: body
+        name: comment
+        required: true
+        schema:
+          $ref: '#/definitions/structs.AddComment'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/structs.AddCommentResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Create comment
+      tags:
+      - comment
+  /comment/{commentId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete by comment ID
+      parameters:
+      - description: Comment ID
+        format: int64
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.DeleteCommentResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete an comment
+      tags:
+      - comment
+    put:
+      consumes:
+      - application/json
+      description: Update by json comment
+      parameters:
+      - description: Comment ID
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      - description: Update Comment
+        in: body
+        name: comment
+        required: true
+        schema:
+          $ref: '#/definitions/structs.UpdateComment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.UpdateCommentResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Update an comment
+      tags:
+      - comment
+  /photo:
+    get:
+      consumes:
+      - application/json
+      description: Show List of Photo by json photo
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/structs.GetPhotoResult'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Show List of Photo
+      tags:
+      - photo
+    post:
+      consumes:
+      - multipart/form-data
+      description: Create by json photo
+      parameters:
+      - description: title of photo
+        in: formData
+        name: title
+        required: true
+        type: string
+      - description: caption of photo
+        in: formData
+        name: caption
+        type: string
+      - description: account image
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/structs.AddPhotoResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Create Photo
+      tags:
+      - photo
+  /photo/{photoId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete by photo ID
+      parameters:
+      - description: photo ID
+        format: int64
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.DeletePhotoResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete an photo
+      tags:
+      - photo
+    put:
+      consumes:
+      - multipart/form-data
+      description: Update by json photo
+      parameters:
+      - description: Photo ID
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      - description: title of photo
+        in: formData
+        name: title
+        required: true
+        type: string
+      - description: caption of photo
+        in: formData
+        name: caption
+        required: true
+        type: string
+      - description: account image
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.UpdatePhotoResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Update an photo
+      tags:
+      - photo
+  /socialmedias:
+    get:
+      consumes:
+      - application/json
+      description: Show List of Social Media by json Social Media
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/structs.GetSocialMediaResult'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Show List of Social Media
+      tags:
+      - socialmedia
+    post:
+      consumes:
+      - application/json
+      description: Create Social Mediaby json Social Media
+      parameters:
+      - description: Show List of SocialMedia
+        in: body
+        name: socialmedia
+        required: true
+        schema:
+          $ref: '#/definitions/structs.AddSocialMedia'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/structs.AddSocialMediaResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Create Social Media
+      tags:
+      - socialmedia
+  /socialmedias/{socialmediaId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete by socialmedia ID
+      parameters:
+      - description: socialmedia ID
+        format: int64
+        in: path
+        name: socialmediaId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.DeleteSocialMediaResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete an socialmedia
+      tags:
+      - socialmedia
+    put:
+      consumes:
+      - application/json
+      description: Update by json Social Media
+      parameters:
+      - description: Social Media ID
+        in: path
+        name: socialmediaId
+        required: true
+        type: integer
+      - description: Update Social Media
+        in: body
+        name: photo
+        required: true
+        schema:
+          $ref: '#/definitions/structs.UpdateSocialMedia'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.UpdateSocialMediaResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Update an Social Media
+      tags:
+      - socialmedia
+  /users/{userId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete by User ID
+      parameters:
+      - description: User ID
+        format: int64
+        in: path
+        name: userId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.DeleteUserResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete an User
+      tags:
+      - users
+    put:
+      consumes:
+      - application/json
+      description: Update by json users
+      parameters:
+      - description: User ID
+        in: path
+        name: userId
+        required: true
+        type: integer
+      - description: Update user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/structs.UpdateUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.UpdateUserResult'
+      security:
+      - ApiKeyAuth: []
+      summary: Update an users
+      tags:
+      - users
+  /users/login:
+    post:
+      consumes:
+      - application/json
+      description: Login by json users
+      parameters:
+      - description: Login user
+        in: body
+        name: login
+        required: true
+        schema:
+          $ref: '#/definitions/structs.LoginUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.LoginUserResult'
+      summary: Login an users
+      tags:
+      - users
+  /users/register:
+    post:
+      consumes:
+      - application/json
+      description: add by json users
+      parameters:
+      - description: Add user
+        in: body
+        name: photo
+        required: true
+        schema:
+          $ref: '#/definitions/structs.AddUser'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/structs.AddUserResult'
+      summary: Add an users
+      tags:
+      - users
+securityDefinitions:
+  ApiKeyAuth:
+    description: Description for what is this security definition being used
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
