@@ -365,7 +365,7 @@ definitions:
         example: testing
         type: string
     type: object
-host: https://mygram-production-7b69.up.railway.app
+host: mygram-production-7b69.up.railway.app
 info:
   contact:
     email: support@swagger.io
