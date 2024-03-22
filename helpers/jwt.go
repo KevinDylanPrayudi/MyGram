@@ -2,9 +2,10 @@ package helpers
 
 import (
 	"github.com/dgrijalva/jwt-go"
+	"os"
 )
 
-var mySigningKey = []byte("AllYourBase")
+var mySigningKey = []byte(os.Getenv("mySigningKey"))
 
 type MyCustomClaims struct {
 	ID uint
