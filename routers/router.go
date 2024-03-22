@@ -1,6 +1,8 @@
 package routers
 
 import (
+	"os"
+	
 	"final-assignment/controllers"
 	_ "final-assignment/customValidations"
 	_ "final-assignment/docs"
@@ -13,6 +15,7 @@ import (
 
 func Router() {
 	router := gin.Default()
+	var PORT = os.Getenv("PORT")
 	// Set a lower memory limit for multipart forms (default is 32 MiB)
 	router.MaxMultipartMemory = 8 << 20 // 8 MiB
 	router.POST("/users/register", controllers.Register)
@@ -37,5 +40,5 @@ func Router() {
 		authorized.DELETE("/socialmedias/:socialMediaId", middlewares.Authorization("socialmedia"), controllers.DeleteSocialMedia)
 	}
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	router.Run(":8080")
+	router.Run(":"+PORT)
 }
