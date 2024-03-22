@@ -290,8 +290,7 @@ const docTemplate = `{
                         "type": "string",
                         "description": "caption of photo",
                         "name": "caption",
-                        "in": "formData",
-                        "required": true
+                        "in": "formData"
                     },
                     {
                         "type": "file",
