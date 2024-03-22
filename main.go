@@ -3,6 +3,8 @@ package main
 import (
 	"final-assignment/database"
 	"final-assignment/routers"
+	"os"
+	"fmt"
 )
 
 //	@title			MyGram api
@@ -25,6 +27,7 @@ import (
 // @name						Authorization
 // @description				Description for what is this security definition being used
 func main() {
+	fmt.Println("This is port of postgres", os.Getenv("PGPORT")
 	database.PostGresDB()
 	routers.Router()
 }
