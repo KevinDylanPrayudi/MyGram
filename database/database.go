@@ -3,6 +3,7 @@ package database
 import (
 	"final-assignment/structs"
 	"log"
+	"fmt"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -11,11 +12,15 @@ import (
 var (
 	db  *gorm.DB
 	err error
+	user = os.Getenv("PGUSER")
+	password = os.Getenv("PGPASSWORD")
+	dbname = os.Getenv("PGDATABASE")
+	port = os.Getenv("PGPORT")
+	host = os.Getenv("PGHOST")
 )
-
 func PostGresDB() {
 	db, err = gorm.Open(postgres.New(postgres.Config{
-		DSN:                  "user=postgres password=123 dbname=assignment-final port=5432 sslmode=disable",
+		DSN:                  fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable", host, user, password, dbname, port),
 		PreferSimpleProtocol: true, // disables implicit prepared statement usage
 	}), &gorm.Config{})
 
