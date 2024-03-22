@@ -19,8 +19,9 @@ var (
 	host = os.Getenv("PGHOST")
 )
 func PostGresDB() {
+	config := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable", host, user, password, dbname, port)
 	db, err = gorm.Open(postgres.New(postgres.Config{
-		DSN:                  fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable", host, user, password, dbname, port),
+		DSN:                  config,
 		PreferSimpleProtocol: true, // disables implicit prepared statement usage
 	}), &gorm.Config{})
 
